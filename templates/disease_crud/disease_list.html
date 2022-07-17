@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for disease in object_list %}
+<div class="land-entry">
+    
+    <table class="table table-striped">
+        <tr>
+          <th scope="col">Disease Name</th>
+          <th scope="col">Disease Plant</th>
+          <th>                           </th>
+
+        </tr>
+        
+      
+      <div class="land-entry">
+        <tr>
+      
+            <td>{{ disease.name }}</td>  
+            <td>{{ disease.disease_plant }}</td>
+            <td> <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'disease_creat'%}">Create New</a>
+                        <a href="{% url 'disease_update' disease.pk %}">Update</a>
+                        <a href="{% url 'disease_delete' disease.pk %}">Delete</a>
+                      </div>
+                </div>
+          </td>                           
+
+
+          </tr>  
+      
+      </table>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+{% endfor %}
+{% endblock content %}

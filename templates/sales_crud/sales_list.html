@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% url 'sales_creat'%}" style="color:green;" class="btn btn-info" role="button" >Create Sale</a>
+
+{% for sale in object_list %}
+
+
+<div class="land-entry">
+
+    <table class="table table-striped">
+        <tr>
+          <th scope="col">Land Name</th>
+          <th scope="col">Crop Weight</th>
+          <th scope="col">Sale Price</th>
+          <th scope="col">revenue</th>
+
+
+        </tr>
+        
+      
+      <div class="land-entry">
+        <tr>
+      
+            <td>{{ sale.land_name }}</td>
+            <td>{{ sale.crop_weight }}</td>
+            <td>{{ sale.sale_price }} $</td>
+            <td>{{ sale.revenue }} $</td>
+
+
+          </tr>  
+      
+      </table>
+
+</div>
+
+
+
+
+
+</div>
+
+
+{% endfor %}
+{% endblock content %}

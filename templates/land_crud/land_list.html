@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block content %}
+
+{% for land in object_list %}
+<div class="land-entry">
+
+    <table class="table table-striped">
+        <tr>
+          <th scope="col">Land Name</th>
+          <th scope="col">Land Size</th>
+          <th>                     </th>
+
+        </tr>
+        
+      
+      <div class="land-entry">
+        <tr>
+      
+            <td>{{ land.name }}</td>
+            <td>{{ land.size }}</td>
+            <td> <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'land_creat'%}">Create New</a>
+                        <a href="{% url 'land_update' land.pk %}">Update</a>
+                        <a href="{% url 'land_delete' land.pk %}">Delete</a>
+                      </div>
+                </div>
+          </td>
+
+          </tr>  
+      
+      </table>
+
+    
+</div>
+{% endfor %}
+
+{% endblock content %}

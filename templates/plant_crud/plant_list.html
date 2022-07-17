@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for plant in object_list %}
+
+
+<div class="land-entry">
+
+    <table class="table table-striped">
+        <tr>
+          <th scope="col">Plant Name</th>
+          <th scope="col">Plant Land</th>
+          <th scope="col">Seed Cost</th>
+          <th>                     </th>
+
+
+        </tr>
+        
+      
+      <div class="land-entry">
+        <tr>
+      
+            <td>{{ plant.name }}</td>
+            <td>{{ plant.plant_land }}</td>
+            <td>{{ plant.seed_cost }}$</td>
+            <td> <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'plant_creat'%}">Create New</a>
+                        <a href="{% url 'plant_update' plant.pk %}">Update</a>
+                        <a href="{% url 'plant_delete' plant.pk %}">Delete</a>
+                      </div>
+                </div>
+          </td>
+
+
+          </tr>  
+      
+      </table>
+
+</div>
+
+</div>
+{% endfor %}
+{% endblock content %}

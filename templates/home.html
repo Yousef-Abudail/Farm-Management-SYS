@@ -1,0 +1,43 @@
+<!-- templates/home.html -->
+
+
+{% extends 'base.html' %}
+{% block content %}
+<table class="table table-striped">
+  <tr>
+    <th>Land Name</th>
+    <th>Plants</th>
+    <th>Farmers</th>
+    <th>Fertilizer</th>
+    <th>Pesticides</th>
+  </tr>
+  
+{% for key, item  in tabel_dict.items %}
+
+<div class="land-entry">
+  <tr>
+
+      <td>{{ key }}</td>
+      <td>{{ item.plants}}</td>
+      <td>{{item.farmers}}</td>
+      <td>{{item.fertilizer}}</td>
+      <td>{{item.pesticides}}</td>
+      
+  </tr>
+    
+{% endfor %}
+
+
+
+</table>
+
+
+
+{% endblock content %}
+
+
+
+
+<!-- "{% url 'land_detail' land.pk %}" -->
+
+

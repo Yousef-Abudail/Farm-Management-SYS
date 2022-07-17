@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for medicine in object_list %}
+
+    <div class="land-entry">
+
+        <table class="table table-striped">
+            <tr>
+              <th scope="col">Medicine Name</th>
+              <th scope="col">Medicine for</th>
+              <th scope="col">Medicine cost</th>
+              <th>                         </th>
+    
+            </tr>
+            
+          
+          <div class="land-entry">
+            <tr>
+          
+                <td>{{ medicine.name }}</td>
+                <td>{{ medicine.disease }}</td>
+                <td>{{ medicine.cost }}</td>
+                <td> <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="{% url 'medicine_creat'%}">Create New</a>
+                            <a href="{% url 'medicine_update' medicine.pk %}">Update</a>
+                            <a href="{% url 'medicine_delete' medicine.pk %}">Delete</a>
+                          </div>
+                    </div>
+              </td>
+    
+              </tr>  
+          
+          </table>
+    
+    
+    </div>
+
+</div>
+{% endfor %}
+{% endblock content %}

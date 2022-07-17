@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for farmer in object_list %}
+
+
+<div class="land-entry">
+
+    <table class="table table-striped">
+        <tr>
+          <th scope="col">Farmer Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Farmer Land</th>
+          <th scope="col">Cost per hour</th>
+          <th>                         </th>
+
+
+        </tr>
+        
+      
+      <div class="land-entry">
+        <tr>
+      
+            <td>{{ farmer.name }}</td>
+            <td>{{ farmer.discreption }}</td>
+            <td>{{ farmer.farmer_land }}</td>
+            <td>{{ farmer.cost_per_hour }}$</td>
+            <td> <div class="dropdown">
+              <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                      <div id="myDropdown" class="dropdown-content">
+                        <a href="{% url 'farmer_creat'%}">Create New</a>
+                        <a href="{% url 'farmer_update' farmer.pk %}">Update</a>
+                        <a href="{% url 'farmer_delete' farmer.pk %}">Delete</a>
+                      </div>
+                </div>
+          </td>
+
+
+          </tr>  
+      
+      </table>
+</div>
+
+
+
+</div>
+
+
+{% endfor %}
+{% endblock content %}

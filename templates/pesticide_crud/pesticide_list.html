@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for pesticide in object_list %}
+
+
+    <div class="land-entry">
+
+        <table class="table table-striped">
+            <tr>
+              <th scope="col">Pesticide Name</th>
+              <th scope="col">Pesticide Plant</th>
+              <th scope="col">Pesticide Land</th>
+              <th scope="col">Pesticide cost</th>
+              <th>                          </th>
+
+              
+    
+            </tr>
+            
+          
+          <div class="land-entry">
+            <tr>
+          
+                <td>{{ pesticide.name }}</td>
+                <td>{{ pesticide.plant }}</td>
+                <td>{{ pesticide.pesticide_land }}</td>
+                <td>{{ pesticide.cost }}</td>
+                <td> <div class="dropdown">
+                  <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                          <div id="myDropdown" class="dropdown-content">
+                            <a href="{% url 'pesticide_creat'%}">Create New</a>
+                            <a href="{% url 'pesticide_update' pesticide.pk %}">Update</a>
+                            <a href="{% url 'pesticide_delete' pesticide.pk %}">Delete</a>
+                          </div>
+                    </div>
+              </td>
+    
+              </tr>  
+          
+          </table>
+    
+    
+
+    </div>
+
+</div>
+
+
+
+{% endfor %}
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+        <table class="table table-striped">
+            <tr>
+            <th scope="col">Land name</th>
+            <th scope="col">Seed Cost</th>
+            <th scope="col">Labor Cost</th>
+            <th scope="col">Fertilizer Cost</th>
+            <th scope="col">Pesticides Cost</th>
+            <th scope="col">Medicine Cost</th>
+            <th scope="col">Water Cost</th>
+            <th scope="col">Total Cost</th>
+            <!-- <th scope="col">selling Price</th> -->
+            <!-- <th scope="col">margins</th> -->
+            </tr>
+            
+
+            
+{% for key,item in cost_dict.items %}
+        
+        <div class="land-entry">
+            <tr>
+        
+                <td>{{ key }}</td>
+                <td>{{ item.seed_cost }}</td>
+                <td>{{ item.labor_cost }}</td>
+                <td>{{ item.fertilizer_cost }}</td>
+                <td>{{ item.pesticides_cost }}</td>
+                <td>{{ item.medicine_cost }}</td>
+                <td>{{ item.water_cost }}</td>
+                <td>{{ item.total_cost }}</td>
+                <td>{{ item.selling_price }}</td>
+                <td>{{ item.margin }}</td>
+                <td> <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                            <div id="myDropdown" class="dropdown-content">
+                              <a href="{% url 'sales_creat'%}">sell</a>
+                             
+                            </div>
+                      </div>
+                </td>
+                
+                
+
+                
+
+                
+            </tr>
+{% endfor %}
+        
+        
+        
+        </table>
+
+
+
+            
+
+        
+{% endblock content %}
